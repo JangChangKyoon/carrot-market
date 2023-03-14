@@ -11,7 +11,7 @@ interface EnterForm {
 }
 
 export default function Enter() {
-  const { register, handleSubmit, reset } = useForm<EnterForm>();
+  const { register, handleSubmit, reset, watch } = useForm<EnterForm>();
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onEmailClick = () => {
     reset();
@@ -24,6 +24,7 @@ export default function Enter() {
   const onValid = (data: EnterForm) => {
     console.log(data);
   };
+  // console.log(watch());
   return (
     <div className="mt-16 px-4">
       <h3 className="text-3xl font-bold text-center">Enter to Carrot</h3>
