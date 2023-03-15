@@ -5,6 +5,7 @@ import withHandler from "../../../libs/server/withHandler";
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   // console.log(req.body);
   const { phone, email } = req.body;
+
   const payload = phone ? { phone: +phone } : { email };
   const user = await client.user.upsert({
     where: {
@@ -17,7 +18,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     update: {},
   });
   console.log(user);
-  /* if (email) {
+
+  /*   if (email) {
     user = await client.user.findUnique({
       where: {
         email,
@@ -34,8 +36,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       });
     }
     console.log(user);
-  }
-  if (phone) {
+  } */
+
+  /* if (phone) {
     user = await client.user.findUnique({
       where: {
         phone: +phone,
