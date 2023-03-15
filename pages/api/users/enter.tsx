@@ -30,6 +30,10 @@ async function handler(
 
   console.log(token);
 
+  return res.json({
+    ok: true,
+  });
+
   /*   if (email) {
     user = await client.user.findUnique({
       where: {
