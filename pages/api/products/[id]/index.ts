@@ -39,7 +39,7 @@ async function handler(
       },
     },
   });
-  console.log(relatedProducts);
+  // console.log(relatedProducts);
   res.json({ ok: true, product, relatedProducts });
 }
 
