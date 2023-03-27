@@ -15,6 +15,7 @@ export default function useMutation<T = any>(
     data: undefined,
     error: undefined,
   });
+
   function mutation(data: any) {
     setSate((prev) => ({ ...prev, loading: true }));
     fetch(url, {
@@ -30,5 +31,7 @@ export default function useMutation<T = any>(
         setSate((prev) => ({ ...prev, error, loading: false }))
       );
   }
+  console.log("Checking data in useMutation...");
+  console.log(state);
   return [mutation, { ...state }];
 }
