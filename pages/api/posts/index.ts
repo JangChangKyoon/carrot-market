@@ -33,7 +33,7 @@ async function handler(
     const {
       query: { latitude, longitude },
     } = req;
-    console.log(req.query);
+    // console.log(req.query);
     const parsedLatitude = parseFloat(String(latitude));
     const parsedLongitue = parseFloat(String(longitude));
 
