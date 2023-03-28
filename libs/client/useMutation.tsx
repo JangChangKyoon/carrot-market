@@ -31,7 +31,7 @@ export default function useMutation<T = any>(
         setSate((prev) => ({ ...prev, error, loading: false }))
       );
   }
-  console.log("Checking data in useMutation...");
-  console.log(state);
+  // console.log("Checking data in useMutation...");
+  // console.log(state);
   return [mutation, { ...state }];
 }
