@@ -13,7 +13,7 @@ export default function useCoords() {
   const onSuccess = ({
     coords: { latitude, longitude },
   }: GeolocationPosition) => {
-    console.log(latitude, longitude);
+    // console.log(latitude, longitude);
     setCoords({ latitude, longitude });
   };
   useEffect(() => {
