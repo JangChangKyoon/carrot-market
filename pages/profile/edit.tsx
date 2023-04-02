@@ -6,6 +6,7 @@ import useUser from "@libs/client/useUser";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import useMutation from "@libs/client/useMutation";
+import { useRouter } from "next/router";
 
 interface EditProfileForm {
   email?: string;
@@ -20,6 +21,7 @@ interface EditProfileResponse {
 }
 
 const EditProfile: NextPage = () => {
+  const router = useRouter();
   const { user } = useUser();
   const {
     register,
@@ -55,6 +57,12 @@ const EditProfile: NextPage = () => {
       setError("formErrors", { message: data.error });
     }
   }, [data, setError]);
+
+  useEffect(() => {
+    if (data?.ok === true) {
+      router.push(`/profile`);
+    }
+  }, [data, router]);
   return (
     <Layout canGoBack title="Edit Profile">
       <form onSubmit={handleSubmit(onValid)} className="py-10 px-4 space-y-4">
